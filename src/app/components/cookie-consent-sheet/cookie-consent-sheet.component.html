@@ -1,0 +1,134 @@
+@if (formGroup) {
+  <form [formGroup]="formGroup" class="grid gap-y-2 max-w-xl">
+    <div class="grid gap-y-2">
+      <p class="text-xs">We use cookies to analyze the use of our site.</p>
+      <p class="text-xs">
+        For more information, see our
+        <a href routerLink="cookies" target="_blank">Cookie Policy</a> and
+        <a href routerLink="privacy" target="_blank">Privacy Policy.</a>
+      </p>
+      @if (shouldShowFullOptions()) {
+        <div class="flex items-center justify-between gap-x-1 md:gap-x-3">
+          <mat-expansion-panel class="w-full">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Strictly Required</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-xs">
+              These cookies are essential for you to browse the website and use
+              its features, such as accessing secure areas of the site.
+            </p>
+          </mat-expansion-panel>
+          <div><mat-slide-toggle disabled checked></mat-slide-toggle></div>
+        </div>
+
+        <div class="flex items-start justify-between gap-x-1 md:gap-x-3">
+          <mat-expansion-panel class="w-full">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Preferences</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-xs">
+              These cookies allow the site to remember choices you have made in
+              the past, like what language you prefer, what region you would
+              like weather reports for, or what your user name and password are
+              so you can automatically log in.
+            </p>
+            <p class="text-xs">
+              We do not currently use any cookies in this category.
+            </p>
+          </mat-expansion-panel>
+          <div>
+            <mat-slide-toggle
+              formControlName="preferencesAllowed"
+            ></mat-slide-toggle>
+          </div>
+        </div>
+
+        <div class="flex items-start justify-between gap-x-1 md:gap-x-3">
+          <mat-expansion-panel class="w-full">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Functional</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-xs">
+              These cookies collect information about how you use the site. None
+              of this information can be used to identify you. It is all
+              aggregated and, therefore, anonymized. Their sole purpose is to
+              improve website functions.
+            </p>
+
+            <ul class="list-disc list-inside">
+              <li class="ml-2">Segment Analytics</li>
+            </ul>
+          </mat-expansion-panel>
+          <div>
+            <mat-slide-toggle
+              formControlName="statisticsAllowed"
+            ></mat-slide-toggle>
+          </div>
+        </div>
+
+        <div class="flex items-start justify-between gap-x-1 md:gap-x-3">
+          <mat-expansion-panel class="w-full">
+            <mat-expansion-panel-header>
+              <mat-panel-title
+                >Marketing</mat-panel-title
+              ></mat-expansion-panel-header
+            >
+            <p class="text-xs">
+              These cookies track your online activity to help advertisers
+              deliver more relevant advertising or to limit how many times you
+              see an ad. These cookies can share that information with other
+              organizations or advertisers.
+            </p>
+            <p class="text-xs">
+              We do not currently use any cookies in this category.
+            </p>
+          </mat-expansion-panel>
+          <div>
+            <mat-slide-toggle
+              formControlName="marketingAllowed"
+            ></mat-slide-toggle>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="flex items-center justify-between gap-x-2">
+      @if (shouldShowFullOptions()) {
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          class="flex-1"
+          (click)="savePreferences()"
+        >
+          Save Preferences
+        </button>
+      } @else {
+        <button
+          mat-raised-button
+          type="button"
+          class="flex-1"
+          (click)="showFullOptions()"
+        >
+          Manage
+        </button>
+
+        <button
+          mat-raised-button
+          type="button"
+          class="flex-1"
+          (click)="rejectAll()"
+        >
+          Reject All
+        </button>
+        <button
+          mat-raised-button
+          type="submit"
+          class="flex-1"
+          (click)="allowAll()"
+        >
+          Allow All
+        </button>
+      }
+    </div>
+  </form>
+}

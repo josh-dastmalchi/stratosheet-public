@@ -1,0 +1,141 @@
+<h1>Table Columns</h1>
+<p>
+  Columns define what kind of data is stored, and what kind of validation should
+  be performed on the data.
+</p>
+<p>Each column in a table must have a unique name.</p>
+<div class="grid gap-y-4">
+  <section>
+    <h2>General Columns</h2>
+    <p>
+      The most important part of a column is its column type. The column type
+      defines what kind of information can be stored in the column, how it is
+      displayed, and what kind of validation is available.
+    </p>
+
+    <div class="grid gap-y-4">
+      <section>
+        <h3>Single-Line Text</h3>
+        <p>
+          Single-line text columns can store any kind of text data, such as
+          names, email addresses, or phone numbers.
+        </p>
+
+        <p>
+          This type of column can have a minimum or maximum length, and also
+          supports special validation for the following kinds of data:
+        </p>
+        <ul class="list-disc list-inside">
+          <li class="ml-2">Credit Card Numbers</li>
+          <li class="ml-2">Email Addresses</li>
+          <li class="ml-2">ZIP Codes</li>
+          <li class="ml-2">URLs</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Multi-Line Text</h3>
+        <p>
+          Multi-line text columns can store any kind of text data, and can span
+          multiple lines. Examples include descriptions, notes, or comments.
+        </p>
+
+        <p>
+          This type of column can have a minimum length, maximum length, or
+          both.
+        </p>
+      </section>
+
+      <section>
+        <h3>Number</h3>
+        <p>
+          Number columns can store any kind of numerical data, such as
+          measurements, currency, or quantities.
+        </p>
+
+        <p>
+          This type of column can have a minimum value, maximum value, or both.
+        </p>
+        <p>
+          This type of column supports formatting to show a currency symbol or
+          to specify the number of decimal places.
+        </p>
+      </section>
+
+      <section>
+        <h3>True / False</h3>
+        <p>
+          True / false columns store a logical true/false value. Examples
+          include being active, being on, etc.
+        </p>
+      </section>
+
+      <section>
+        <h3>Attachment</h3>
+        <p>Attachment columns can store files such as images or documents.</p>
+      </section>
+    </div>
+  </section>
+
+  <section>
+    <h2>Dates and Times</h2>
+
+    <section>
+      <h3>Date and Time</h3>
+      <p>
+        Date and Time columns store both a date and a time. This type of data is
+        used to represent a specific point in time, such as an event's start
+        time.
+      </p>
+
+      <p>These columns must specify a time zone.</p>
+      <p>
+        These columns can be formatted to various standard formats, and can use
+        either a 12- or 24-hour clock.
+      </p>
+    </section>
+
+    <section>
+      <h3>Date Only</h3>
+      <p>
+        Date Only columns are used to store a date without a time. This type of
+        data is used to represent a specific day, such as a birthday or a due
+        date.
+      </p>
+      <p>These columns must specify a time zone.</p>
+      <p>These columns can be formatted to various standard formats.</p>
+    </section>
+
+    <section>
+      <h3>Time Only</h3>
+      <p>
+        Time Only columns are used to store a time without a date. This type of
+        data is used to represent a specific time of day, such as a recurring
+        meeting time or a store's opening hours.
+      </p>
+      <p>These columns can use either a 12- or 24-hour clock.</p>
+    </section>
+  </section>
+
+  <section>
+    <h2>References</h2>
+
+    <section>
+      <h3>Row Reference</h3>
+      <p>
+        Row Reference columns are used to reference another row in the same or a
+        different table. This type of data is used to create relationships
+        between tables, such as a customer's orders or a project's tasks.
+      </p>
+    </section>
+
+    <section>
+      <h3>User Reference</h3>
+      <p>
+        User Reference columns are used to reference a user in the workspace.
+        This type of data is used to assign tasks, track changes, or send
+        notifications to specific users.
+      </p>
+    </section>
+  </section>
+</div>

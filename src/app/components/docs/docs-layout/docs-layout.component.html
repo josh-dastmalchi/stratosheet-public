@@ -1,0 +1,45 @@
+@if (navMode) {
+  <mat-sidenav-container class="h-full">
+    <mat-sidenav #drawer [mode]="navMode" [opened]="isNavOpen">
+      <div class="p-4">
+        <mat-nav-list>
+          @for (category of categories; track $index) {
+            <div class="py-2">
+              <h3 mat-subheader>{{ category.title }}</h3>
+              @for (topic of category.topics; track $index) {
+                <a
+                  mat-list-item
+                  routerLink="{{ topic.route }}"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  class="underline"
+                >
+                  {{ topic.title }}
+                </a>
+              }
+            </div>
+          }
+        </mat-nav-list>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="max-h-full w-full overflow-auto">
+        <div class="p-4 grid gap-4 max-w-7xl max-h-full">
+          @if (navMode === "over") {
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="drawer.open()"
+              class="w-full"
+            >
+              <mat-icon>list</mat-icon>
+              View Topics
+            </button>
+          }
+
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+}

@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" role="navigation">
+  <div class="inline sm:hidden">
+    <button mat-icon-button [mat-menu-trigger-for]="mainMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+  <a routerLink="" class="mr-4">
+    <img src="/assets/grackle.svg" class="logo" alt="Gracklesoft Logo" />
+  </a>
+  <div class="hidden sm:inline">
+    <a mat-button routerLink="product">Product</a>
+    <a mat-button routerLink="pricing">Pricing</a>
+    <a mat-button [href]="helpUrl" target="_blank">Help</a>
+  </div>
+  <div class="flex-auto"></div>
+
+  <a mat-raised-button [href]="stratosheetUrl">Start for free</a>
+</mat-toolbar>
+
+<mat-menu #mainMenu="matMenu">
+  <a mat-menu-item routerLink="product">Product</a>
+  <a mat-menu-item routerLink="pricing">Pricing</a>
+  <a mat-menu-item [href]="helpUrl" target="_blank">Help</a>
+</mat-menu>

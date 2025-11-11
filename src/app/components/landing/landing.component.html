@@ -1,0 +1,39 @@
+<div class="p-4 max-w-7xl mx-auto grid gap-4">
+  <p class="text-center text-4xl md:text-6xl">Stratosheet Help</p>
+  <p class="text-center">
+    For support requests, log in to submit a report, or email us at
+    <a [href]="supportEmailHref">{{ supportEmailAddress }}.</a>
+  </p>
+  <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:gap-6">
+    <a routerLink="docs">
+      <div
+        class="grid gap-4 rounded-md border border-solid border-gray-300 p-4 md:p-6 h-full"
+      >
+        <p class="text-xl font-semibold text-black">Getting Started</p>
+        <p class="text-sm text-gray-500">
+          Learn about what Stratosheet is and what it can do for you
+        </p>
+      </div>
+    </a>
+    <a routerLink="docs/tables/overview">
+      <div
+        class="grid gap-4 rounded-md border border-solid border-gray-300 p-4 md:p-6 h-full"
+      >
+        <p class="text-xl font-semibold text-black">Data</p>
+        <p class="text-sm text-gray-500">
+          Design your tables, create custom views, and manage your data
+        </p>
+      </div>
+    </a>
+    <a routerLink="docs/automations/overview">
+      <div
+        class="grid gap-4 rounded-md border border-solid border-gray-300 p-4 md:p-6 h-full"
+      >
+        <p class="text-xl font-semibold text-black">Automations</p>
+        <p class="text-sm text-gray-500">
+          Automate your workflows by connecting your data to your favorite tools
+        </p>
+      </div>
+    </a>
+  </div>
+</div>

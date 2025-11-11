@@ -1,0 +1,38 @@
+name: Build/Deploy Production
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+
+jobs:
+  build_and_deploy_job:
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          lfs: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "/"
+          api_location: ""
+          app_build_command: "npm run build -- --configuration=production"
+          output_location: "dist/stratosheet-public/browser"
+        env:
+          configuration: "production"

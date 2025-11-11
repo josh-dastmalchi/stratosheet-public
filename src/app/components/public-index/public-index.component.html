@@ -1,0 +1,234 @@
+<div class="p-4 lg:p-10 grid justify-center gap-4 max-w-7xl mx-auto">
+  <p class="text-center text-4xl md:text-6xl">
+    Modernize your spreadsheets with the power of the cloud
+  </p>
+
+  <div class="grid my-8 gap-y-16">
+    <section class="mx-auto w-full">
+      <p class="text-center text-3xl font-bold">
+        Make your data available everywhere
+      </p>
+      <div class="mx-auto mt-4 text-center text-gray-500">
+        <p>Access your data from anywhere with just a web browser</p>
+        <p>Share access with your team</p>
+      </div>
+      <div class="mx-auto w-full max-w-72 sm:max-w-2xl pt-8">
+        <div
+          class="grid items-center grid-cols-2 sm:grid-cols-4 gap-y-6 sm:gap-0"
+        >
+          <div class="flex justify-around">
+            <img
+              src="assets/cellphone.svg"
+              alt="Cell Phone"
+              class="inline-block h-11"
+            />
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="assets/tablet.svg"
+              alt="Tablet"
+              class="inline-block h-14"
+            />
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="assets/laptop.svg"
+              alt="Laptop"
+              class="inline-block h-14"
+            />
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="assets/desktop-tower-monitor.svg"
+              alt="Desktop"
+              class="inline-block h-16"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full">
+      <p class="text-center text-3xl font-bold">
+        Integrate with today's most popular services
+      </p>
+      <p class="mx-auto mb-8 mt-4 text-center text-gray-500 md:mb-12 lg:mb-16">
+        Automate communicating with your team or customers, scheduling events,
+        and more
+      </p>
+      <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:gap-6 pt-8">
+        <div
+          class="grid grid-cols-2 md:grid-cols-1 gap-4 rounded-md border border-solid light-accent-border p-4 md:p-6"
+        >
+          <div class="grid gap-2">
+            <img
+              src="assets/google.svg"
+              alt=""
+              class="inline-block h-16 w-16 rounded-full object-cover"
+            />
+            <p class="text-xl font-semibold">Google</p>
+          </div>
+          <span class="text-sm text-gray-500">
+            Email team members or customers, or schedule events in Google
+            Calendar
+          </span>
+        </div>
+        <div
+          class="grid grid-cols-2 md:grid-cols-1 gap-4 rounded-md border border-solid light-accent-border p-4 md:p-6"
+        >
+          <div class="grid gap-2">
+            <img
+              src="assets/slack.svg"
+              alt=""
+              class="inline-block h-16 w-16 rounded-full object-cover"
+            />
+            <p class="text-xl font-semibold">Slack</p>
+          </div>
+          <span class="text-sm text-gray-500">
+            Send slack messages to your team so they know about changes right
+            away
+          </span>
+        </div>
+        <div
+          class="grid grid-cols-2 md:grid-cols-1 gap-4 rounded-md border border-solid light-accent-border p-4 md:p-6"
+        >
+          <div class="grid gap-2">
+            <img
+              src="assets/twilio.svg"
+              alt=""
+              class="inline-block h-16 w-16 rounded-full object-cover"
+            />
+            <p class="text-xl font-semibold">Twilio</p>
+          </div>
+          <span class="text-sm text-gray-500">
+            Send SMS messages to your team or customers
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full">
+      <p class="text-center text-3xl font-bold">View your data in new ways</p>
+      <p class="mx-auto mb-8 mt-4 text-center text-gray-500 md:mb-12 lg:mb-16">
+        Add custom views for your tables, and visualize it with calendars or
+        kanban boards
+      </p>
+
+      <div class="grid gap-y-2 pt-8">
+        <div class="flex items-center justify-between gap-x-2">
+          <div class="hidden md:flex items-center justify-center">
+            <button mat-mini-fab (click)="moveLeft()" color="primary">
+              <mat-icon>arrow_left</mat-icon>
+            </button>
+          </div>
+          <div>
+            <div
+              [ngClass]="
+                carouselIndex() === 0
+                  ? 'carousel-image opacity-100'
+                  : 'carousel-image opacity-0 h-0 w-0'
+              "
+            >
+              <img
+                src="/assets/table1000x1000.png"
+                alt="Table View Example"
+                class="border-4 rounded"
+              />
+            </div>
+
+            <div
+              [ngClass]="
+                carouselIndex() === 1
+                  ? 'carousel-image opacity-100'
+                  : 'carousel-image opacity-0 h-0 w-0'
+              "
+            >
+              <img
+                src="/assets/calendar1000x1000.png"
+                alt="Calendar View Example"
+                class="border-4 rounded carousel-image"
+              />
+            </div>
+
+            <div
+              [ngClass]="
+                carouselIndex() === 2
+                  ? 'carousel-image opacity-100'
+                  : 'carousel-image opacity-0 h-0 w-0'
+              "
+            >
+              <img
+                src="/assets/kanban1000x1000.png"
+                alt="Kanban Example"
+                class="border-4 rounded carousel-image"
+              />
+            </div>
+          </div>
+          <div class="hidden md:flex items-center justify-center">
+            <button mat-mini-fab (click)="moveRight()" color="primary">
+              <mat-icon>arrow_right</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="flex md:hidden items-center justify-between">
+          <button mat-mini-fab (click)="moveLeft()" color="primary">
+            <mat-icon>arrow_left</mat-icon>
+          </button>
+          <button mat-mini-fab (click)="moveRight()" color="primary">
+            <mat-icon>arrow_right</mat-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="mx-auto w-full">
+      <p class="text-center text-3xl font-bold">
+        Get started easily with our templates
+      </p>
+      <p class="mx-auto mb-8 mt-4 text-center text-gray-500 md:mb-12 lg:mb-16">
+        Not sure where to start? We'll get you on track with sample tables and
+        data
+      </p>
+      <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:gap-6 mt-8">
+        <div
+          class="grid gap-4 rounded-md border border-solid light-accent-border p-8 md:p-10"
+        >
+          <p class="text-xl font-semibold">Project Management</p>
+          <p class="text-sm text-gray-500">
+            Keep track of status and due dates
+          </p>
+        </div>
+        <div
+          class="grid gap-4 rounded-md border border-solid light-accent-border p-8 md:p-10"
+        >
+          <p class="text-xl font-semibold">Expense Tracker</p>
+          <p class="text-sm text-gray-500">
+            Categorize and track your expenses
+          </p>
+        </div>
+        <div
+          class="grid gap-4 rounded-md border border-solid light-accent-border p-8 md:p-10"
+        >
+          <p class="text-xl font-semibold">Contact Manager</p>
+          <p class="text-sm text-gray-500">
+            Keep track of your contacts and their information
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full">
+      <p class="text-center text-3xl font-bold">
+        Stay up to date with our newsletter
+      </p>
+      <div class="flex justify-center mt-4">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="showNewsletterDialog()"
+        >
+          Subscribe Now
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

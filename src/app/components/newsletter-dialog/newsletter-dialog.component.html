@@ -1,0 +1,25 @@
+<mat-dialog-content class="h-[650px] !p-0">
+  @if (isLoading) {
+    <div class="flex justify-center items-center h-full">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+  }
+  @if (hasError) {
+    <p>There was a problem signing up for the newsletter.</p>
+  }
+
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://cdn.forms-content.sg-form.com/a4d85f3e-4f81-11ef-b877-62380c8dcbc1"
+    (load)="onLoaded($event)"
+    (error)="onError()"
+    [hidden]="isLoading"
+    #newsLetterForm
+  ></iframe>
+</mat-dialog-content>
+<div mat-dialog-actions class="flex">
+  <button matDialogClose mat-raised-button color="primary" class="flex-1">
+    Close
+  </button>
+</div>

@@ -1,0 +1,48 @@
+<footer class="footer-background px-2 py-4 grid gap-y-8">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 justify-between w-full gap-x-4 gap-y-4 max-w-7xl mx-auto"
+  >
+    <div class="grid justify-around sm:col-span-3 lg:col-span-1 text-center">
+      <h1 class="m-0">Stratosheet</h1>
+      <address class="grid text-xs">
+        <span>{{ supportEmail }}</span>
+        <span>Gracklesoft LLC</span>
+        <span>PO BOX 201475</span>
+        <span>Austin, TX 78720</span>
+      </address>
+    </div>
+
+    <div class="grid justify-around gap-y-2 text-center">
+      <h2 class="font-medium">Solution</h2>
+
+      <a href routerLink="product" class="font-light text-gray-500">Product</a>
+      <a href routerLink="pricing" class="font-light text-gray-500">Pricing</a>
+    </div>
+
+    <div class="grid justify-around gap-y-2 text-center">
+      <h2 class="font-medium text-black">Policy</h2>
+      <a href routerLink="privacy" class="font-light">Privacy Policy</a>
+
+      <a href routerLink="terms" class="font-light text-gray-500"
+        >Terms of Service</a
+      >
+      <a href routerLink="cookies" class="font-light text-gray-500"
+        >Cookie Notice</a
+      >
+      <a
+        (click)="showCookieConsentDialog()"
+        class="cursor-pointer font-light text-gray-500"
+        >Manage Consent</a
+      >
+    </div>
+
+    <div class="grid justify-around gap-y-2 text-center">
+      <h2 class="font-medium text-black">Company</h2>
+      <a href routerLink="company" class="font-light text-gray-500">About</a>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center">
+    <p class="text-center text-sm">© Copyright 2025. All rights reserved.</p>
+  </div>
+</footer>
